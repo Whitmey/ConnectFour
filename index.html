@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ConnectThree</title>
+  </head>
+  <!-- <script src="app.js" charset="utf-8"></script> -->
+  <link rel="stylesheet" href="style.css">
+  <body>
+
+    <div class="board">
+        <div class="row1">
+          <div id="cell1" class="cell"></div>
+          <div id="cell2" class="cell"></div>
+          <div id="cell3" class="cell"></div>
+        </div>
+        <div class="row2">
+          <div id="cell4" class="cell"></div>
+          <div id="cell5" class="cell"></div>
+          <div id="cell6" class="cell"></div>
+        </div>
+        <div class="row3">
+          <div id="cell7" class="cell"></div>
+          <div id="cell8" class="cell"></div>
+          <div id="cell9" class="cell"></div>
+        </div>
+    </div>
+
+  </body>
+  <script type="text/javascript">
+
+  const cells = document.getElementsByClassName("cell");
+  let clickCounter = 0;
+
+  for (let i=0; i<cells.length; i++) { // Loop through each cell attaching my event listener
+    cells[i].addEventListener("click", function() {
+      clickCounter++;
+      // checkForWinner();
+        if (clickCounter%2 === 0) {
+          this.style.backgroundColor = "red";
+        }
+        else {
+          this.style.backgroundColor = "black";
+        }
+      checkForWinner();
+    });
+  }
+
+
+  function checkForWinner() {
+    if (document.getElementById('cell1').style.backgroundColor === "red" && document.getElementById('cell2').style.backgroundColor === "red" && document.getElementById('cell3').style.backgroundColor === "red") {
+      alert("We have a winner!");
+    }
+    else if (document.getElementById('cell4').style.backgroundColor === "red" && document.getElementById('cell5').style.backgroundColor === "red" && document.getElementById('cell6').style.backgroundColor === "red") {
+      alert("We have a winner!");
+    }
+    else if (document.getElementById('cell7').style.backgroundColor === "red" && document.getElementById('cell8').style.backgroundColor === "red" && document.getElementById('cell9').style.backgroundColor === "red") {
+      alert("We have a winner!");
+    } //HORIZONTALS
+    else if (document.getElementById('cell1').style.backgroundColor === "red" && document.getElementById('cell4').style.backgroundColor === "red" && document.getElementById('cell7').style.backgroundColor === "red") {
+      alert("We have a winner!");
+    }
+    else if (document.getElementById('cell2').style.backgroundColor === "red" && document.getElementById('cell5').style.backgroundColor === "red" && document.getElementById('cell8').style.backgroundColor === "red") {
+      alert("We have a winner!");
+    }
+    else if (document.getElementById('cell3').style.backgroundColor === "red" && document.getElementById('cell6').style.backgroundColor === "red" && document.getElementById('cell9').style.backgroundColor === "red") {
+      alert("We have a winner!");
+    } //VERTICALS
+    else if (document.getElementById('cell1').style.backgroundColor === "red" && document.getElementById('cell5').style.backgroundColor === "red" && document.getElementById('cell9').style.backgroundColor === "red") {
+      alert("We have a winner!");
+    }
+    else if (document.getElementById('cell3').style.backgroundColor === "red" && document.getElementById('cell5').style.backgroundColor === "red" && document.getElementById('cell7').style.backgroundColor === "red") {
+      alert("We have a winner!");
+    } //DIAGONALS
+    //BLACKS
+    else if (document.getElementById('cell1').style.backgroundColor === "black" && document.getElementById('cell2').style.backgroundColor === "black" && document.getElementById('cell3').style.backgroundColor === "black") {
+      alert("We have a winner!");
+    }
+    else if (document.getElementById('cell4').style.backgroundColor === "black" && document.getElementById('cell5').style.backgroundColor === "black" && document.getElementById('cell6').style.backgroundColor === "black") {
+      alert("We have a winner!");
+    }
+    else if (document.getElementById('cell7').style.backgroundColor === "black" && document.getElementById('cell8').style.backgroundColor === "black" && document.getElementById('cell9').style.backgroundColor === "black") {
+      alert("We have a winner!");
+    } //HORIZONTALS
+    else if (document.getElementById('cell1').style.backgroundColor === "black" && document.getElementById('cell4').style.backgroundColor === "black" && document.getElementById('cell7').style.backgroundColor === "black") {
+      alert("We have a winner!");
+    }
+    else if (document.getElementById('cell2').style.backgroundColor === "black" && document.getElementById('cell5').style.backgroundColor === "black" && document.getElementById('cell8').style.backgroundColor === "black") {
+      alert("We have a winner!");
+    }
+    else if (document.getElementById('cell3').style.backgroundColor === "black" && document.getElementById('cell6').style.backgroundColor === "black" && document.getElementById('cell9').style.backgroundColor === "black") {
+      alert("We have a winner!");
+    } //VERTICALS
+    else if (document.getElementById('cell1').style.backgroundColor === "black" && document.getElementById('cell5').style.backgroundColor === "black" && document.getElementById('cell9').style.backgroundColor === "black") {
+      alert("We have a winner!");
+    }
+    else if (document.getElementById('cell3').style.backgroundColor === "black" && document.getElementById('cell5').style.backgroundColor === "black" && document.getElementById('cell7').style.backgroundColor === "black") {
+      alert("We have a winner!");
+    } //DIAGONALS
+  }
+
+  </script>
+</html>
